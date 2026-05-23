@@ -58,6 +58,43 @@ git clone https://github.com/Lupynow/math-modeling-paper.git
 
 Skill 会先确认比赛类型和当前阶段，然后提供针对性指导。
 
+## 搭配其他 Skill 使用
+
+此 Skill 覆盖论文写作环节，与以下 Skill 组合可形成完整的比赛工作流：
+
+### 赛前准备
+```
+nature-reader              → 精读往年优秀论文，学习结构和写法
+nature-academic-search     → 检索方法论文献（如特定算法的原始论文）
+nature-citation            → 管理 .bib 参考文献库，导出 EndNote/RIS
+```
+
+### 赛中 — 国赛中文论文
+```
+xlsx                       → 数据清洗、探索性分析、结果汇总
+math-modeling-paper        → 论文结构规划 + 逐节写作指导 + 格式检查清单
+nature-figure              → 科研级图表（多面板、统一配色、期刊规范）
+docx                       → 最终排版输出、格式精修
+```
+
+### 赛中 — 美赛英文论文
+```
+xlsx                       → 数据清洗、探索性分析
+math-modeling-paper        → 英文论文结构 + 模型命名 + Summary Sheet + 句式库
+nature-polishing           → 英文润色，Nature 风格学术表达，修正中式英语
+nature-figure              → 期刊级配图，符合国际期刊视觉标准
+pdf                        → 导出最终 PDF，合并 Summary Sheet
+```
+
+### 赛后检查
+```
+math-modeling-paper        → 逐项格式检查（摘要量化/模型检验/参考文献）
+addy-code-review-and-quality → 代码质量审查（一致性、可复现性）
+superpowers:verification-before-completion → 最终验证，确保无遗漏
+```
+
+> **推荐安装**：以上搭配 Skill 可通过 `find-skills` 搜索安装。核心链 `math-modeling-paper` + `nature-polishing`（美赛必装）+ `nature-figure`（图表必装）即可覆盖 80% 的需求。
+
 ## 文件结构
 
 ```
