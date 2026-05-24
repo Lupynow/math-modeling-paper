@@ -16,12 +16,12 @@
 
 | 功能 | 能力 |
 |------|------|
-| 问题拆解 | 自动判定 12 种数学本质类型（预测/优化/机理/网络科学/生态…） |
+| 问题拆解 | 自动判定 12 种数学本质类型（预测/优化/机理/网络科学/生态...） |
 | 模型匹配 | 95+ 场景决策矩阵，每个场景给出首选模型 + 备选 + 边界条件 |
-| Cookbook | 5 本算法手册：优化（GA/PSO/NSGA-II/CVaR）、ML（XGBoost/RF/GMM）、评价（TOPSIS/AHP/熵权/模糊）、机理（热传导/ODE/几何/光学）、统计（ANOVA/贝叶斯/时间序列/灰色关联） |
+| Cookbook | 5 本算法手册（优化/ML/评价/机理/统计） |
 | 代码模板 | 22 个 Python + 7 个 MATLAB 可运行模板，含问题适配注释 |
-| Playbook | 11 本完整例题走通（国赛 8 + 美赛 3），每本含拆题→选模型→公式→代码→结果全流程 |
-| 美赛专项 | 模型命名策略、Memo/Letter/Policy Brief 写作框架、Our Work 流程图设计、可迁移性检验 |
+| Playbook | 11 本完整例题走通（国赛 8 + 美赛 3），拆题到代码全流程 |
+| 美赛专项 | 模型命名策略、Memo/Letter 框架、Our Work 流程图设计 |
 
 ### `math-modeling-paper` — 写作
 
@@ -29,13 +29,13 @@
 
 | 功能 | 能力 |
 |------|------|
-| 结构模板 | 国赛/美赛双赛道标准结构（含页数建议和每节要点） |
-| 摘要指导 | 中英双语模板 + 获奖实例 + 十大常见错误 |
-| 题型策略 | A/B/C/D/E/F 六题型差异化写作策略（图表偏好、评审侧重、常见误区） |
-| 模型检验 | 灵敏度分析、误差分析、鲁棒性检验的完整方法论 |
-| 图表代码 | 流程图/数据图/伪代码规范 + 附录代码要求 |
+| 结构模板 | 国赛/美赛双赛道标准结构 |
+| 摘要指导 | 中英双语模板 + 获奖实例 |
+| 题型策略 | A/B/C/D/E/F 六题型差异化写作策略 |
+| 模型检验 | 灵敏度分析/误差分析/鲁棒性检验方法论 |
+| 图表代码 | 流程图/数据图/伪代码规范 + 附录要求 |
 | 句式库 | 中英双语学术句式，按章节组织 |
-| Memo/Letter | 美赛 B-F 题一页 Memo/Letter 的格式、模板、实例 |
+| Memo/Letter | 美赛 B-F 题一页 Memo/Letter 格式模板 |
 | 排版检查 | LaTeX/Word 检查清单 |
 
 ---
@@ -43,11 +43,10 @@
 ## 安装
 
 ```bash
-cd ~/.claude/skills/
-git clone https://github.com/Lupynow/math-modeling-skills.git
+git clone https://github.com/Lupynow/math-modeling-skills.git ~/.claude/skills/
 ```
 
-重启 Claude Code，两个 skill 自动加载。说出你的赛题，solver 自动触发；要写论文时，paper 随时待命。
+重启 Claude Code，两个 skill 自动加载。
 
 ---
 
@@ -55,23 +54,23 @@ git clone https://github.com/Lupynow/math-modeling-skills.git
 
 ```
 拿到赛题
-  │
-  ▼
+  |
+  v
 math-modeling-solver
-  ├─ 阶段1：拆题分析（12 种问题类型自动判定）
-  ├─ 阶段2：模型匹配（查 95+ 场景决策矩阵 + 加载对应 Cookbook）
-  ├─ 阶段3：算法展开 + 代码生成（加载代码模板，填入问题参数）
-  └─ 阶段4：论文衔接 → 输出 [PAPER_READY] 论文草稿片段
-  │
-  ▼
+  |-- 阶段1: 拆题分析（12 种问题类型判定）
+  |-- 阶段2: 模型匹配（查决策矩阵 + 加载 Cookbook）
+  |-- 阶段3: 算法展开 + 代码生成（加载模板填入参数）
+  |-- 阶段4: 论文衔接 -> 输出 [PAPER_READY] 草稿片段
+  |
+  v
 math-modeling-paper
-  ├─ Step 0：检测 [PAPER_READY] 信号，加载草稿片段
-  ├─ Step 1：确定比赛类型和写作阶段（规划/写作/润色/检查）
-  ├─ Step 2：加载对应指南（国赛/美赛 + 专项 reference）
-  └─ Step 3：逐章写作指导（目的→结构→内容→红线）
-  │
-  ▼
-交卷 🎓
+  |-- Step 0: 检测 [PAPER_READY] 信号
+  |-- Step 1: 确定比赛类型和写作阶段
+  |-- Step 2: 加载对应指南
+  |-- Step 3: 逐章写作指导
+  |
+  v
+交卷
 ```
 
 ---
@@ -79,34 +78,33 @@ math-modeling-paper
 ## 文件结构
 
 ```
-math-modeling-skills/           # 仓库根目录
-├── README.md
-├── SKILL.md                    # math-modeling-paper 主文件
-├── references/
-│   ├── abstract-writing.md
-│   ├── common-phrases.md
-│   ├── cumcm-guide.md
-│   ├── figure-and-code-guide.md
-│   ├── mcm-icm-guide.md
-│   ├── memo-writing.md
-│   ├── model-validation.md
-│   └── problem-type-strategies.md
-└── math-modeling-solver/       # solver skill（子目录）
-    ├── SKILL.md
-    └── references/
-        ├── problem-decomposition.md       # 拆题方法论
-        ├── model-selection-matrix.md      # 模型决策矩阵
-        ├── paper-bridge.md               # 论文衔接层
-        ├── mcm-specific-guide.md         # 美赛专项指南
-        ├── cookbook-optimization.md      # 优化类算法手册
-        ├── cookbook-ml.md                # ML 类算法手册
-        ├── cookbook-evaluation.md        # 评价类方法手册
-        ├── cookbook-mechanistic.md       # 机理类建模手册
-        ├── cookbook-statistical.md       # 统计类方法手册
-        ├── code-templates/              # 29 个代码模板
-        │   ├── python/  (22 files)
-        │   └── matlab/  (7 files)
-        └── playbooks/                   # 11 本例题走通
+math-modeling-skills/
+|-- README.md
+|-- math-modeling-paper/
+|   |-- SKILL.md
+|   |-- references/
+|       |-- abstract-writing.md
+|       |-- common-phrases.md
+|       |-- cumcm-guide.md
+|       |-- figure-and-code-guide.md
+|       |-- mcm-icm-guide.md
+|       |-- memo-writing.md
+|       |-- model-validation.md
+|       |-- problem-type-strategies.md
+|-- math-modeling-solver/
+    |-- SKILL.md
+    |-- references/
+        |-- problem-decomposition.md
+        |-- model-selection-matrix.md
+        |-- paper-bridge.md
+        |-- mcm-specific-guide.md
+        |-- cookbook-optimization.md
+        |-- cookbook-ml.md
+        |-- cookbook-evaluation.md
+        |-- cookbook-mechanistic.md
+        |-- cookbook-statistical.md
+        |-- code-templates/ (29 files)
+        |-- playbooks/ (11 files)
 ```
 
 ---
@@ -115,9 +113,9 @@ math-modeling-skills/           # 仓库根目录
 
 | Skill | 用途 |
 |-------|------|
-| `nature-figure` | 科研级图表（多面板、统一配色、期刊规范） |
-| `nature-polishing` | 美赛英文润色（Nature 风格学术表达） |
-| `xlsx` | 数据清洗与探索性分析 |
+| `nature-figure` | 科研级图表 |
+| `nature-polishing` | 美赛英文润色 |
+| `xlsx` | 数据清洗分析 |
 | `docx` | Word 排版输出 |
 | `pdf` | PDF 合并导出 |
 
