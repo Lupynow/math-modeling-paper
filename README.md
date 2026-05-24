@@ -42,19 +42,32 @@
 
 ## 安装
 
+### 方式一：`npx skills add`（推荐）
+
+```bash
+# 安装全部两个 skill
+npx skills add Lupynow/math-modeling-skills --skill '*'
+
+# 或单独安装
+npx skills add Lupynow/math-modeling-skills --skill math-modeling-solver
+npx skills add Lupynow/math-modeling-skills --skill math-modeling-paper
+```
+
+### 方式二：手动安装
+
 ```bash
 # 1. 克隆到临时目录
 git clone https://github.com/Lupynow/math-modeling-skills.git /tmp/math-modeling-skills
 
-# 2. 将两个 skill 目录移到 Claude Code 的 skills 目录下
-mv /tmp/math-modeling-skills/math-modeling-solver ~/.claude/skills/
-mv /tmp/math-modeling-skills/math-modeling-paper ~/.claude/skills/
+# 2. 将 skills/ 下的子目录移到 Claude Code 的 skills 目录
+mv /tmp/math-modeling-skills/skills/math-modeling-solver ~/.claude/skills/
+mv /tmp/math-modeling-skills/skills/math-modeling-paper ~/.claude/skills/
 
-# 3. 清理临时目录
+# 3. 清理
 rm -rf /tmp/math-modeling-skills
 ```
 
-> **为什么不能直接 clone？** Claude Code 只会扫描 `~/.claude/skills/<name>/SKILL.md`（一层目录）。直接 `git clone` 会多出一层 `math-modeling-skills/` 目录，导致 skill 无法被识别。
+> **为什么不能直接 clone？** Claude Code 只会扫描 `~/.claude/skills/<name>/SKILL.md`（一层目录），仓库的 `skills/` 目录是给 `npx skills` CLI 识别用的。
 
 重启 Claude Code，两个 skill 自动加载。
 
@@ -90,31 +103,32 @@ math-modeling-paper
 ```
 math-modeling-skills/
 |-- README.md
-|-- math-modeling-paper/
-|   |-- SKILL.md
-|   |-- references/
-|       |-- abstract-writing.md
-|       |-- common-phrases.md
-|       |-- cumcm-guide.md
-|       |-- figure-and-code-guide.md
-|       |-- mcm-icm-guide.md
-|       |-- memo-writing.md
-|       |-- model-validation.md
-|       |-- problem-type-strategies.md
-|-- math-modeling-solver/
-    |-- SKILL.md
-    |-- references/
-        |-- problem-decomposition.md
-        |-- model-selection-matrix.md
-        |-- paper-bridge.md
-        |-- mcm-specific-guide.md
-        |-- cookbook-optimization.md
-        |-- cookbook-ml.md
-        |-- cookbook-evaluation.md
-        |-- cookbook-mechanistic.md
-        |-- cookbook-statistical.md
-        |-- code-templates/ (29 files)
-        |-- playbooks/ (11 files)
+|-- skills/
+    |-- math-modeling-paper/
+    |   |-- SKILL.md
+    |   |-- references/
+    |       |-- abstract-writing.md
+    |       |-- common-phrases.md
+    |       |-- cumcm-guide.md
+    |       |-- figure-and-code-guide.md
+    |       |-- mcm-icm-guide.md
+    |       |-- memo-writing.md
+    |       |-- model-validation.md
+    |       |-- problem-type-strategies.md
+    |-- math-modeling-solver/
+        |-- SKILL.md
+        |-- references/
+            |-- problem-decomposition.md
+            |-- model-selection-matrix.md
+            |-- paper-bridge.md
+            |-- mcm-specific-guide.md
+            |-- cookbook-optimization.md
+            |-- cookbook-ml.md
+            |-- cookbook-evaluation.md
+            |-- cookbook-mechanistic.md
+            |-- cookbook-statistical.md
+            |-- code-templates/ (29 files)
+            |-- playbooks/ (11 files)
 ```
 
 ---
