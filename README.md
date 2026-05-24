@@ -9,7 +9,7 @@
 | 得分差异 | 关键因素 |
 |---------|---------|
 | 摘要缺量化结果 | 三等奖/优秀奖论文摘要只写方法不写结果，一等奖论文每问必有具体数值 |
-| 模型检验缺失 | 低分论文跳过灵敏度分析/误差分析，优秀论文用 2-5 页做检验 |
+| 模型检验缺失 | 低分论文跳过灵敏度分析/误差分析；优秀论文每个子问题末尾嵌入检验（0.5-1页/子问题） |
 | 参考文献用 CSDN | 低分论文引用博客/AI 工具，优秀论文引用期刊论文和教材 |
 | 问题分析=方法罗列 | "我们将用 XX 方法"vs"因为 XX 特点，选择 YY 方法而非 ZZ" |
 | 优缺点评算法不评模型 | "线性回归简单直观"(评算法) vs "本模型将产量假设为线性，未考虑交互效应"(评本模型) |
@@ -72,7 +72,7 @@ nature-citation            → 管理 .bib 参考文献库，导出 EndNote/RIS
 ### 赛中 — 国赛中文论文
 ```
 xlsx                       → 数据清洗、探索性分析、结果汇总
-math-modeling-paper        → 论文结构规划 + 逐节写作指导 + 格式检查清单
+math-modeling-paper        → 论文结构规划 + A/B/C题型策略 + 逐节写作指导 + 图表代码规范
 nature-figure              → 科研级图表（多面板、统一配色、期刊规范）
 docx                       → 最终排版输出、格式精修
 ```
@@ -105,8 +105,17 @@ math-modeling-paper/
     ├── mcm-icm-guide.md             # 美赛逐节详细写法指南
     ├── abstract-writing.md          # 摘要模板+实例+常见错误（中英双语）
     ├── model-validation.md          # 5 种检验方法+Python 代码+检查清单
-    └── common-phrases.md            # 中英双语学术句式库（按章节组织）
+    ├── common-phrases.md            # 中英双语学术句式库（按章节组织）
+    ├── problem-type-strategies.md   # A/B/C 题差异化策略（模型/工具/图表/易错点）
+    └── figure-and-code-guide.md     # 图表规范（流程图/数据图/伪代码）与代码附录要求
 ```
+
+### 使用优先级
+
+1. **新手上路**：SKILL.md → 确定题型后读 `problem-type-strategies.md` → 写摘要时读 `abstract-writing.md`
+2. **写到检验**：读 `model-validation.md`（注意嵌入 vs 独立章的区别）
+3. **出图出代码**：读 `figure-and-code-guide.md`
+4. **润色句式**：读 `common-phrases.md`
 
 ## 设计依据
 

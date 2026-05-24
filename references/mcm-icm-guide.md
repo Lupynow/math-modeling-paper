@@ -103,7 +103,7 @@ Keywords: Olympic Medal Prediction, Tobit Model, Bayesian Change-Point Detection
 
 ### Sensitivity Analysis（2-4页，独立章节，必需品）
 
-这是美赛论文中**非可选的必选项**。参考 `references/model-validation.md` 获取完整方法。
+这是美赛论文中**非可选的必选项**。参考 `model-validation.md` 获取完整方法。国赛嵌入子问题，美赛独立成章——这是两赛在结构上的关键差异。
 
 推荐对每个模型做 1-2 种灵敏度检验：
 - Sobol' indices（全局灵敏度分析，最受推崇）
@@ -122,7 +122,7 @@ Keywords: Olympic Medal Prediction, Tobit Model, Bayesian Change-Point Detection
 
 **每个 weakness 对应一个 concrete improvement**。
 
-### References（1页，≥10条）
+### References（1页，≥8条）
 
 来源要求：学术期刊 > 会议论文 > 学位论文 > 教材 > 官方报告。禁止 blog/CSDN/Wikipedia。
 
