@@ -148,3 +148,13 @@ math-modeling-skills/
 ## License
 
 MIT
+
+---
+
+## 支持
+
+如果这套 skill 对你的竞赛有帮助，欢迎随缘支持一下~
+
+<p align="center">
+  <img src="assets/wechat-donate.png" alt="微信赞赏码" width="240">
+</p>
