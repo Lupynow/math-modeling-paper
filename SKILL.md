@@ -1,6 +1,6 @@
 ---
 name: math-modeling-paper
-description: 数学建模竞赛论文写作全流程指导。覆盖国赛(CUMCM)和美赛(MCM/ICM)，从论文结构规划、各章节撰写、模型检验、参考文献规范到最终格式检查。当用户提及数学建模论文写作、建模比赛、国赛/美赛论文、CUMCM、MCM/ICM、数模论文结构、摘要写作、模型检验、灵敏度分析、latex建模模板、word建模排版，或需要写/修改/优化/检查建模论文的任何部分时，都必须使用此 skill。
+description: 数学建模竞赛论文写作全流程指导。覆盖国赛(CUMCM)和美赛(MCM/ICM)，从论文结构规划、各章节撰写、模型检验、参考文献规范到最终格式检查。与math-modeling-solver形成"解题→写作"配对——可接收solver输出的论文草稿片段直接展开写作。当用户提及数学建模论文写作、建模比赛、国赛/美赛/电工杯/亚太杯/深圳杯/华为杯论文、CUMCM、MCM/ICM、数模论文结构、摘要写作、模型检验、灵敏度分析、latex建模模板、word建模排版、Memo/Letter写作、模型命名、Our Work流程图，或需要写/修改/优化/检查建模论文的任何部分时，都必须使用此 skill。
 ---
 
 # 数学建模竞赛论文写作
@@ -8,6 +8,14 @@ description: 数学建模竞赛论文写作全流程指导。覆盖国赛(CUMCM)
 ## 使用流程
 
 收到写作任务后，按以下步骤操作：
+
+### Step 0: 检查建模来源
+
+先判断用户是否已完成建模：
+
+- **用户已用 `math-modeling-solver` 完成建模，有论文草稿片段** → 识别 `[PAPER_READY]` 信号或用户说"建模做完了/准备写论文"，直接加载草稿片段，从对应章节开始写作
+- **用户未建模，直接要写论文** → 建议先用 `math-modeling-solver` 完成建模，或直接进入 Step 1 确定写作阶段
+- **用户已有自己的建模方案** → 直接进入 Step 1
 
 ### Step 1: 识别比赛类型和写作阶段
 
@@ -72,9 +80,9 @@ description: 数学建模竞赛论文写作全流程指导。覆盖国赛(CUMCM)
 | Assumptions & Notations | 1-2页 | 5-6条，每条有 Justification |
 | Data Processing | 1-2页 | 独立成章，方法+理由 |
 | Model 1-3 (per task) | 每模型4-6页 | 每个模型起名字+缩写，含算法伪代码 |
-| Sensitivity Analysis | 2-4页 | 多方法验证，独立成章 |
+| Sensitivity Analysis | 1-3页 | 多方法验证，独立或嵌入均可 |
 | Strengths & Weaknesses | 1页 | 针对本模型的具体评价 |
-| References | 1页 | ≥8条，期刊为主 |
+| References | 1页 | ≥5条，期刊为主 |
 | AI Usage Report | 1页 | 声明 AI 工具使用 |
 | Appendix | 按需 | 代码 |
 
